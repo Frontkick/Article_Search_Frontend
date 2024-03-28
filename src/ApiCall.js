@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import Loading from 'react-loading-animation';
+import { PacmanLoader } from 'react-spinners';
+import "./App.css"
 
 function ArticleSearch() {
   const [query, setQuery] = useState('');
@@ -33,7 +34,7 @@ function ArticleSearch() {
     <div className="article-search">
       {!hasResponse && (
         <>
-          <h1 className="text-center mt-40 pt-40 text-5xl pb-5">Swift Sum</h1>
+          <h1 className="text-center pt-40 text-5xl pb-5">Swift Sum</h1>
           <form onSubmit={handleSubmit}>
             <div className="flex items-center justify-center">
               <input
@@ -52,7 +53,7 @@ function ArticleSearch() {
           </div>
         </>
       )}
-      <div className="mt-10">{loading && <Loading />}</div>
+      <div className=" mr-10 h-screen flex justify-center">{loading && <PacmanLoader />}</div>
       {errorMessage && <p>{errorMessage}</p>}
       {!loading && hasResponse && (
         <div className="search-results">
