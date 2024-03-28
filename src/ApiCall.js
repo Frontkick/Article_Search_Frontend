@@ -53,7 +53,7 @@ function ArticleSearch() {
           </div>
         </>
       )}
-      <div className=" mr-10 h-screen flex justify-center">{loading && <PacmanLoader />}</div>
+      <div className=" mt-10 mr-10 h-screen flex justify-center">{loading && <PacmanLoader />}</div>
       {errorMessage && <p>{errorMessage}</p>}
       {!loading && hasResponse && (
         <div className="search-results">
