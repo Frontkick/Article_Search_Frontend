@@ -13,7 +13,7 @@ function ArticleSearch() {
   const searchArticles = async (query) => {
     setLoading(true);
     try {
-      const response = await axios.get(`https://flask-on-koyeb-sucker3699.koyeb.app/api/${query}`);
+      const response = await axios.get(`https://exuberant-annabell-sucker3699-a471912e.koyeb.app/api/${query}`);
       setSearchResults(response.data.articles);
       setErrorMessage('');
       setHasResponse(true);
@@ -48,8 +48,10 @@ function ArticleSearch() {
                 Search
               </button>
             </div>
+            
           </form>
-          <div className="flex items-center justify-center">
+          <div className="mt-5 flex items-center justify-center">
+          {loading &&<p>It takes around 2-5 minutes to get and extract details please wait</p>}
           </div>
         </>
       )}
